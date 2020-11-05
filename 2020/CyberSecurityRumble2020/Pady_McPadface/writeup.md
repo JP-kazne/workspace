@@ -62,14 +62,16 @@ e=65537
 ![(r^2)^e = (r^e)^2 \equiv c \mod n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28r%5E2%29%5Ee+%3D+%28r%5Ee%29%5E2+%5Cequiv+c+%5Cmod+n) と変形し、![c](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+c) が ![n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+n) を法とする**平方剰余**であるかを調べればよい。
 
 > **平方剰余**
+>
 > 整数 ![q](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+q) が ![N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+N) を法として平方数に合同であるとき、 ![q](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+q) は ![N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+N) を法とする平方剰余という。
 >
 > ![_{}^{\exists}x$ s.t. $x^2 \equiv q \mod N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+_%7B%7D%5E%7B%5Cexists%7Dx%24+s.t.+%24x%5E2+%5Cequiv+q+%5Cmod+N)
 > ![\Leftrightarrow q : N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5CLeftrightarrow+q+%3A+N) を法とする平方剰余
 
-$q$ が $N$ の平方剰余かどうかを次の記号を使って表す。
+![q](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+q) が ![N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+N) の平方剰余かどうかを次の記号を使って表す。
 
 > **ルジャンドル記号**
+>
 > ![(\frac{q}{N})=\begin{cases}
 1 & (q \is \a \quadratic \residue \modulo N)\\ 
 -1 & (\otherwise)
@@ -94,4 +96,22 @@ $q$ が $N$ の平方剰余かどうかを次の記号を使って表す。
 [プログラム+解説]
 
 * https://tex2e.github.io/blog/crypto/legendre-and-jacobi-symbls
+
+例）13 で割って 6 余る平方数は存在するか？
+
+| ![x](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x)                         | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  |
+| ----------------------------------------------------------------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ![x^2 \mod 13](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%5E2+%5Cmod+13) | 0   | 1   | 4   | 9   | 3   | 12  | 10  | 10  | 12  | 3   | 9   | 4   | 1   |
+
+![\begin{eqnarray}
+\begin{split}
+(\frac{6}{13}) &= (\frac{2}{13})(\frac{3}{13}) \\
+&= (-1)^{\frac{13^2-1}{8}}\cdot(-1)^{\frac{13-1}{2}\cdot\frac{3-1}{2}}\cdot(\frac{13}{3})\\
+&= (-1)^{21}\cdot(-1)^{6\cdot1}\cdot(\frac{1}{3})\\
+&= (-1)\cdot1\cdot1\\
+&= -1
+\end{split}
+\end{eqnarray}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Beqnarray%7D%0A%5Cbegin%7Bsplit%7D%0A%28%5Cfrac%7B6%7D%7B13%7D%29+%26%3D+%28%5Cfrac%7B2%7D%7B13%7D%29%28%5Cfrac%7B3%7D%7B13%7D%29+%5C%5C%0A%26%3D+%28-1%29%5E%7B%5Cfrac%7B13%5E2-1%7D%7B8%7D%7D%5Ccdot%28-1%29%5E%7B%5Cfrac%7B13-1%7D%7B2%7D%5Ccdot%5Cfrac%7B3-1%7D%7B2%7D%7D%5Ccdot%28%5Cfrac%7B13%7D%7B3%7D%29%5C%5C%0A%26%3D+%28-1%29%5E%7B21%7D%5Ccdot%28-1%29%5E%7B6%5Ccdot1%7D%5Ccdot%28%5Cfrac%7B1%7D%7B3%7D%29%5C%5C%0A%26%3D+%28-1%29%5Ccdot1%5Ccdot1%5C%5C%0A%26%3D+-1%0A%5Cend%7Bsplit%7D%0A%5Cend%7Beqnarray%7D)
+
+各定理を用いて存在しないと判定できる。
 
