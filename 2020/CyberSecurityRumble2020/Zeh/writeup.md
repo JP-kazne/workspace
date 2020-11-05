@@ -82,13 +82,13 @@ void main(void) {
 
 処理の流れは以下の通り。
 
-1. $i$ をprintf
+1. ![i](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+i) をprintf
 
-1. $e,k$ を入力
+1. ![e,k](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+e%2Ck) を入力
 
-1. $k = (*p) >> (k \mod 3)$ を7回
+1. ![k = (*p) \gg (k \mod 3)](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+k+%3D+%28%2Ap%29+%5Cgg+%28k+%5Cmod+3%29) を7回
 
-1. $53325 = k \oplus e$
+1. ![53325 = k \oplus e](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+53325+%3D+k+%5Coplus+e)
 
 `nc`してみると常に`1804289383`が返ってくるので`i`は固定っぽい。
 
@@ -97,9 +97,9 @@ $ nc chal.cybersecurityrumble.de 65123
 1804289383
 ```
 
-最終的に $k = 53225$ になるように逆算していけば良さそう。
+最終的に k = 53225 になるように逆算していけば良さそう。
 
-(3)式で、何回ループを回しても $*p$ 自体は変化しないので、$k$ は $*p$ を 0,1,2右シフトした3通りのパターンのいずれかになる。
+(3)式で、何回ループを回しても *p 自体は変化しないので、k は *p を 0,1,2右シフトした3通りのパターンのいずれかになる。
 
 | シフト | *p         |
 | --- | ---------- |
@@ -107,9 +107,9 @@ $ nc chal.cybersecurityrumble.de 65123
 | 1   | 902144691  |
 | 2   | 451072345  |
 
-そして、それぞれに対して $k = 53225$ となる $e$ を計算すると次のようになる。
+そして、それぞれに対して k = 53225 となる e を計算すると次のようになる。
 
-$*p \oplus e =53225 \Leftrightarrow e = *p \oplus 53225$
+![*p \oplus e =53225 \Leftrightarrow e = *p \oplus 53225](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%2Ap+%5Coplus+e+%3D53225+%5CLeftrightarrow+e+%3D+%2Ap+%5Coplus+53225)
 
 * [競技プログラミングにおけるXORのTips](https://qiita.com/kuuso1/items/778acaa7011d98a3ff3a)
 
@@ -120,7 +120,7 @@ $*p \oplus e =53225 \Leftrightarrow e = *p \oplus 53225$
 | 1   | 902144691  | 902131034  |
 | 2   | 451072345  | 451026608  |
 
-よって、`0 1804307086`, `0 902131034`, `0 451026608`のいずれかは $k = 53225$ になるはずである。
+よって、`0 1804307086`, `0 902131034`, `0 451026608`のいずれかは k = 53225 になるはずである。
 
 ```bash
 $ nc chal.cybersecurityrumble.de 65123                       

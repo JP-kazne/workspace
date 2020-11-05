@@ -47,11 +47,11 @@ e=65537
 6344781982406291229904616097805576891680892322322233659332047813051271052109897033252412538927719488412069758369450241995502516459491473242999017770856786045082580123686511514697479818998491222910687788991281589873507596649734736831753657844561650803919893634314315967644310123683825013046295631859453549892078522986400756535163909207475879084021071358300550008249888124344976827483625126703181222101427358253757725725111508077062593842303282441855876873129588295014017202563048619388174412323763633870647195416100738355366319758548648612458199676439286...
 ```
 
-* $n$ はおよそ $2^{2048}$ くらいで、$p < q < 2*p$ なので $p,q$ もおよそ $2^{1024}$ くらいである
+* ![n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+n) はおよそ ![2^{2048}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+2%5E%7B2048%7D) くらいで、![p < q < 2*p](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+p+%3C+q+%3C+2%2Ap) なので ![p,q](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+p%2Cq) もおよそ ![2^{1024}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+2%5E%7B1024%7D) くらいである
 
-* $i$ はバイナリの要素なので $0$ か $1$ である
+* ![i](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+i) はバイナリの要素なので 0 か 1 である
 
-$c$ が $(r^2)^e \mod n$ と $(1+r^2)^e \mod n$ のどちらかなのか見分けられれば良いと思ったが、方法が思いつかなかった。
+![c](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+c) が ![(r^2)^e \mod n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28r%5E2%29%5Ee+%5Cmod+n) と ![(1+r^2)^e \mod n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%281%2Br%5E2%29%5Ee+%5Cmod+n) のどちらなのか見分けられれば良いと思ったが、方法が思いつかなかった。
 
 # Solution
 
@@ -59,33 +59,33 @@ $c$ が $(r^2)^e \mod n$ と $(1+r^2)^e \mod n$ のどちらかなのか見分�
 
 * https://ctftime.org/writeup/24770
 
-$(r^2)^e = (r^e)^2 \equiv c \mod n$ と変形し、$c$ が $n$ を法とする**平方剰余**であるかを調べればよい。
+![(r^2)^e = (r^e)^2 \equiv c \mod n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28r%5E2%29%5Ee+%3D+%28r%5Ee%29%5E2+%5Cequiv+c+%5Cmod+n) と変形し、![c](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+c) が ![n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+n) を法とする**平方剰余**であるかを調べればよい。
 
 > **平方剰余**
-> 整数 $q$ が $N$ を法として平方数に合同であるとき、 $q$ は $N$ を法とする平方剰余という。
+> 整数 ![q](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+q) が ![N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+N) を法として平方数に合同であるとき、 ![q](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+q) は ![N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+N) を法とする平方剰余という。
 >
-> $_{}^{\exists}x$ s.t. $x^2 \equiv q \mod N$
-> $\Leftrightarrow$ $q$ : $N$ を法とする平方剰余
+> ![_{}^{\exists}x$ s.t. $x^2 \equiv q \mod N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+_%7B%7D%5E%7B%5Cexists%7Dx%24+s.t.+%24x%5E2+%5Cequiv+q+%5Cmod+N)
+> ![\Leftrightarrow q : N](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5CLeftrightarrow+q+%3A+N) を法とする平方剰余
 
 $q$ が $N$ の平方剰余かどうかを次の記号を使って表す。
 
 > **ルジャンドル記号**
-> $(\frac{q}{N})=\begin{cases}
-1 & (qがNの平方剰余である)\\ 
--1 & (qがNの平方剰余でない)
-\end{cases}$
+> ![(\frac{q}{N})=\begin{cases}
+1 & (q \is \a \quadratic \residue \modulo N)\\ 
+-1 & (\otherwise)
+\end{cases}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28%5Cfrac%7Bq%7D%7BN%7D%29%3D%5Cbegin%7Bcases%7D%0A1+%26+%28q+%5Cis+%5Ca+%5Cquadratic+%5Cresidue+%5Cmodulo+N%29%5C%5C+%0A-1+%26+%28%5Cotherwise%29%0A%5Cend%7Bcases%7D)
 
 また、以下の法則が成り立つ。(証明略)
 
-> 異なる奇素数 $p,q$ に対して、
-> * $(\frac{q}{p})(\frac{p}{q}) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}$
+> 異なる奇素数 ![p,q](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+p%2Cq) に対して、
+> * ![(\frac{q}{p})(\frac{p}{q}) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28%5Cfrac%7Bq%7D%7Bp%7D%29%28%5Cfrac%7Bp%7D%7Bq%7D%29+%3D+%28-1%29%5E%7B%5Cfrac%7Bp-1%7D%7B2%7D%5Ccdot%5Cfrac%7Bq-1%7D%7B2%7D%7D)
 >
-> 奇素数 $p$ に対して、
-> * $(\frac{-1}{p}) = (-1)^{\frac{p-1}{2}}$
-> * $(\frac{2}{p}) = (-1)^{\frac{p^2-1}{8}}$
+> 奇素数 ![p](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+p) に対して、
+> * ![(\frac{-1}{p}) = (-1)^{\frac{p-1}{2}}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28%5Cfrac%7B-1%7D%7Bp%7D%29+%3D+%28-1%29%5E%7B%5Cfrac%7Bp-1%7D%7B2%7D%7D)
+> * ![(\frac{2}{p}) = (-1)^{\frac{p^2-1}{8}}](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28%5Cfrac%7B2%7D%7Bp%7D%29+%3D+%28-1%29%5E%7B%5Cfrac%7Bp%5E2-1%7D%7B8%7D%7D)
 >
-> $a,b$ が $p$ と互いに素なとき
-> * $(\frac{ab}{p}) = (\frac{a}{p})(\frac{b}{p})$
+> ![a,b](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+a%2Cb) が ![p](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+p) と互いに素なとき
+> * ![(\frac{ab}{p}) = (\frac{a}{p})(\frac{b}{p})](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28%5Cfrac%7Bab%7D%7Bp%7D%29+%3D+%28%5Cfrac%7Ba%7D%7Bp%7D%29%28%5Cfrac%7Bb%7D%7Bp%7D%29)
 
 [定理の説明]
 
