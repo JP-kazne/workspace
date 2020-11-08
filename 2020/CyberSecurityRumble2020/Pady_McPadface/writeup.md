@@ -115,3 +115,41 @@ e=65537
 
 各定理を用いて存在しないと判定できる。
 
+平方剰余の判定にはSageMathの`kronecker`関数を用いた。
+
+`solver.sage`
+
+```py
+from pwn import *
+from Crypto.Util.number import long_to_bytes
+
+n=23946008544227658126007712372803958643232141489757386834260550742271224503035086875887914418064683964046938371640632153677880813529023769841157840969433316734058706481517878257755290676559343682013294580085557476138201639446709290119631383493940405818550255561589074538261117055296294434994144540224412018398452371792093095280080422459773487177339595746894989682038387107119249733105558301840478252766907821053044992141741079156669562032221433390029219634673005161989684970682781410366155504440886376453225497112165607897302209008685179791558898003720802478389914297472563728836647547791799771532020349546729665006643
+
+HOST = 'chal.cybersecurityrumble.de'
+PORT = 34187
+L = 263 # number of bits to retrieve
+
+sols = [0 for _ in range(L)]
+for i in range(10):
+    r = remote(HOST,PORT)
+    res = r.recvall().split(b"\n")
+    cs = []
+    for l in res:
+        try:
+            cs.append(int(l))
+        except:
+            pass
+    assert len(cs) == L
+    for j,c in enumerate(cs):
+        if kronecker(c,n) == -1:
+            sols[j] = 1
+    print( long_to_bytes( int("".join(map(str,sols)),2)).decode("utf-8") )
+```
+
+[参考]
+
+* https://ctftime.org/writeup/24770
+
+![r](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+r)の値によっては、![(1+r^2)^e \mod n](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%281%2Br%5E2%29%5Ee+%5Cmod+n)が平方剰余であると判定される可能性があるので、複数回試行して絞り込む必要がある。
+
+<!-- CSR{c0nstruCt1ng_squ4re_r3sIdues} -->

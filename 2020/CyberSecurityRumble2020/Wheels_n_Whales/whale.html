@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+  
+<title>Create Whale</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    body{
+      background-color: darkslateblue;
+      color: white;
+    }
+    #content {
+      text-align: center;
+      padding: 5px;
+			margin: 0px auto;
+			max-width: 80%;
+      height: 100vh;
+		}
+
+    code {
+      display: block;
+      white-space: pre-wrap
+    }
+
+    .content {
+      margin: 0px auto;
+      max-width: 1300px;
+    }
+
+    .card-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      margin: 5;
+      color:black;
+    }
+
+    .btn {
+      margin: 2px;
+    }
+
+    .card-clickable {
+      min-width: 100px;
+      max-width: 350px;
+      margin: 5px;
+    }
+
+    .card-clickable:hover {
+      transition: all 0.2s ease-out;
+      box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+      top: -4px;
+      border: 1px solid #cccccc;
+      background-color: white;
+    }
+
+    .card-clickable:hover:before {
+      transform: scale(2.15);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Wheels 'n' Whales</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">Home</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/wheel">Wheel</a>
+        </li>
+        <li class="nav-item  active ">
+          <a class="nav-link" href="/whale">Whale</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    
+<div id="content">
+<h1>Create a whale</h1>
+<form action="/whale" method="POST">
+  <div class="form-group">
+    <label class="form-check-label" for="inputname">Name</label>
+    <input type="text" class="form-control" id="inputname" name="name" placeholder="Enter whales name">
+  </div>
+  <div class="form-group">
+    <label class="form-check-label" for="image_num">Picture num</label>
+    <select name="image_num" id="image_num" class="form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-check-label" for="weight">Your whales weight</label>
+    <input type="number" name="weight", id="weight" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+</body>
+
+</html>
