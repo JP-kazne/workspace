@@ -10,19 +10,19 @@
 
 ### Solved
 
-| tag          | problem   | comment              | score |
-| ------------ | --------- | -------------------- | ----: |
-| Web          | [Cyberwall](Cyberwall) | OS Command Injection | 100   |
-| Crypto       | [Hashfun](Hashfun)   | XOR                  | 100   |
-| Reversing, C | [Zeh](Zeh)       | XOR                  | 100   |
+| tag          | problem                | comment              | score | solved |
+| ------------ | ---------------------- | -------------------- | ----: | -----: |
+| Web          | [Cyberwall](Cyberwall) | OS Command Injection | 100   | 389    |
+| Crypto       | [Hashfun](Hashfun)     | XOR                  | 100   | 267    |
+| Reversing, C | [Zeh](Zeh)             | XOR                  | 100   | 221    |
 
 
 ### Unsolved
 
-| tag  | problem         | comment                 | score |
-| ---- | --------------- | ----------------------- | ----: |
-| Math | Pady McPadface  | Quadratic residue (平方剰余) | 200   |
-| Web  | Wheels n Whales | PyYAML                  | 100   |
+| tag  | problem         | comment                  | score | solved |
+| ---- | --------------- | ------------------------ | ----: | -----: |
+| Math | Pady McPadface  | Quadratic residue (平方剰余) | 200   | 18     |
+| Web  | Wheels n Whales | PyYAML                   | 100   | 94     |
 
 ---
 
