@@ -19,10 +19,10 @@
 
 ### Unsolved
 
-| tag  | problem         | comment                  | score | solved |
-| ---- | --------------- | ------------------------ | ----: | -----: |
-| Math | Pady McPadface  | Quadratic residue (平方剰余) | 200   | 18     |
-| Web  | Wheels n Whales | PyYAML                   | 100   | 94     |
+| tag  | problem                            | comment                  | score | solved |
+| ---- | ---------------------------------- | ------------------------ | ----: | -----: |
+| Math | [Pady McPadface](Pady_McPadface)   | Quadratic residue (平方剰余) | 200   | 18     |
+| Web  | [Wheels n Whales](Wheels_n_Whales) | PyYAML                   | 100   | 94     |
 
 ---
 
