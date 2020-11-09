@@ -10,16 +10,20 @@
 
 ### Solved
 
-| tag       | problem                      | comment | score |
-| --------- | ---------------------------- | ------- | ----: |
-| Reversing | [SSE_KEYGENME](SSE_KEYGENME) | angr    |       |
+| tag       | problem                      | comment | score | solved |
+| --------- | ---------------------------- | ------- | ----: | -----: |
+| Reversing | [SSE_KEYGENME](SSE_KEYGENME) | angr    | 25    | 127    |
 
 ### Unsolved
 
-| tag       | problem        | comment | score |
-| --------- | -------------- | ------- | ----: |
-| Reversing | [8byte](8byte) |         |       |
+| tag       | problem        | comment | score | solved |
+| --------- | -------------- | ------- | ----: | -----: |
+| Reversing | [8byte](8byte) |         |       | 39     |
 
 ---
 
 ## Result
+
+* 30 points
+
+* 109 / 624 (> 1 pts)
