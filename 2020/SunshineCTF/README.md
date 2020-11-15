@@ -1,4 +1,4 @@
-# KipodAfterFree CTF
+# Sunshine CTF
 
 * https://2020.sunshinectf.org/
 
