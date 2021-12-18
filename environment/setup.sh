@@ -34,6 +34,8 @@ rbenv install 2.7.1
 
 # docker
 sudo apt install docker-compose
+## for WSL
+## https://docs.docker.com/engine/install/ubuntu/ Install Docker Engine 1
 
 ##############################
 #           Pwn              #
@@ -88,6 +90,13 @@ pip install uncompyle6
 pip3 install pycrypto
 pip install pycryptodome
 
+# Msieve
+sudo apt-get install build-essential libgmp3-dev zlib1g-dev libecm-dev
+wget "http://downloads.sourceforge.net/project/msieve/msieve/Msieve%20v1.52/msieve152.tar.gz?r=&ts=1452107977&use_mirror=jaist" -O msieve152.tar.gz
+tar xvf msieve152.tar.gz
+cd msieve-1.52/
+make all ECM=1
+
 ##############################
 #           Math             #
 ##############################
@@ -111,14 +120,26 @@ sudo python2 setup.py build install
 # Wireshark
 sudo apt install wireshark
 
+# aircrack-ng
+sudo apt-get install aircrack-ng
+
 # binwalk
 sudo apt install binwalk
 
 # Zsteg(Ruby)
 sudo gem install zsteg
 
+# StegCracker (https://github.com/Paradoxis/StegCracker)
+pip3 install stegcracker
+
 # fcrackzip
 sudo apt-get install fcrackzip
+
+# pkcrack
+wget https://www.unix-ag.uni-kl.de/\~conrad/krypto/pkcrack/pkcrack-1.2.2.tar.gz
+tar xzvf pkcrack-1.2.2.tar.gz
+cd pkcrack-1.2.2/src
+make
 
 # john the ripper
 git clone https://github.com/openwall/john.git
