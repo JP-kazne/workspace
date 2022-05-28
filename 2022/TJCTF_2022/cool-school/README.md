@@ -1,0 +1,3 @@
+Wow TJ is such a cool school! This image really captures the vibes. But something seems off about the image...
+
+[image.png](https://tjctf-2022.storage.googleapis.com/uploads/1a1f6a901162115f8953f48ce188df3bf8c5b0108204f9286d4c2f0f4c0ff647/image.png)
