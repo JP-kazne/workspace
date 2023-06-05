@@ -1,0 +1,3 @@
+なんだか目が回りそうな問題ですね……
+
+[Conquer.tar.gz](https://score.beginners.seccon.jp/api/download?key=beginners23%2FConquer.tar.gz) 4fe9007c38458ac345dc11109666d30b5d1f8f93
