@@ -1,0 +1,3 @@
+バイナリ列は読めない？じゃあ翻訳してあげるよ！
+
+`nc 01-translator.challenges.beginners.seccon.jp 9999`
