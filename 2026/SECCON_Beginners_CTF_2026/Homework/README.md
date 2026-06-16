@@ -1,0 +1,3 @@
+My teacher told me to do this assignment. I’d like to use AI to make it easier, but I have a feeling there’s something hidden here...
+
+[Homework.pdf](https://score.beginners.seccon.jp/files/e81df064b2e884f1c041f82218f14e84/Homework.pdf?token=eyJ1c2VyX2lkIjo0NjYsInRlYW1faWQiOjE5OCwiZmlsZV9pZCI6Mjh9.ai1Hlg.HwQteos75iDzM8Ux2ziR8wuAVoY "Homework.pdf")
